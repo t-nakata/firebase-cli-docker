@@ -5,19 +5,19 @@
 次のコマンドでイメージが作成されます
 
 ``` shell
-$ docker build -t firebase-hosting .
+docker build -t firebase-hosting .
 ``` 
 
 次のコマンドで作成したイメージを起動して、中のshellに入ります。
 
 ``` shell
-$ docker run -it -p 9005:9005 -v $PWD:/app firebase-hosting /bin/sh
+docker run -it -p 9005:9005 -v $PWD:/app firebase-hosting /bin/sh
 ```
 
 Firebase認証する
 
 ```　shell
-$ firebase login
+firebase login
 
 # 下記のように聞かれますがどちらでもいいので Y と入力
 ? Allow Firebase to collect CLI usage and error reporting information? (Y/n) 
@@ -28,4 +28,22 @@ https://accounts.google.com/o/oauth2/auth?client_id=xxxxxxxxxx-fgrhgmd47bqnekij5
 
 # Googleのアカウント選択画面になるので、今回Hostingに使用するFirebase Projectの権限を持っているアカウントを選択する。
 
+```
+
+
+Firebase hostingの初期化
+
+
+```
+firebase init hosting
+
+#ホスティングを使うプロジェクトを選択
+#公開ディレクトリは [docs]を選択
+
+```
+
+デプロイを行う
+
+```
+firebase deploy
 ```
